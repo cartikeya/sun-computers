@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import API_URL from "../config";
 
 const Dashboard = () => {
   const [tickets, setTickets] = useState([]);
@@ -19,7 +20,7 @@ const Dashboard = () => {
     // 3. If they have a badge, ask the server for the tickets
     const fetchTickets = async () => {
       try {
-        const response = await fetch("https://sun-computers.onrender.com/api/tickets", {
+        const response = await fetch(`${API_URL}/api/tickets`, {
           headers: {
             Authorization: `Bearer ${token}`, // Show the badge to the Bouncer
           },
@@ -51,7 +52,7 @@ const Dashboard = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `https://sun-computers.onrender.com/api/tickets/${ticketId}`,
+        `${API_URL}/api/tickets/${ticketId}`,
         {
           method: "PUT",
           headers: {

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import API_URL from "../config";
 
 const LandingPage = () => {
   // State to hold the form data
@@ -23,7 +24,7 @@ const LandingPage = () => {
     setStatusMessage("Sending...");
 
     try {
-      const response = await fetch("https://sun-computers.onrender.com/api/tickets", {
+      const response = await fetch(`${API_URL}/api/tickets`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
