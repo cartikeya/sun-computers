@@ -23,7 +23,7 @@ const LandingPage = () => {
     setStatusMessage("Sending...");
 
     try {
-      const response = await fetch("http://localhost:5001/api/tickets", {
+      const response = await fetch("https://sun-computers.onrender.com/api/tickets", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

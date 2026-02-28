@@ -19,7 +19,7 @@ const Dashboard = () => {
     // 3. If they have a badge, ask the server for the tickets
     const fetchTickets = async () => {
       try {
-        const response = await fetch("http://localhost:5001/api/tickets", {
+        const response = await fetch("https://sun-computers.onrender.com/api/tickets", {
           headers: {
             Authorization: `Bearer ${token}`, // Show the badge to the Bouncer
           },
@@ -51,7 +51,7 @@ const Dashboard = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `http://localhost:5001/api/tickets/${ticketId}`,
+        `https://sun-computers.onrender.com/api/tickets/${ticketId}`,
         {
           method: "PUT",
           headers: {
